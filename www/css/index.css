@@ -1,0 +1,127 @@
+html, body {
+  background-size: 170px 81.6px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 170 81.6" width="170" height="81.6" style="opacity: 0.2; filter: grayscale(0.5);"><text x="0em" y="1em" font-size="34" transform="rotate(28 21.25 20.4)">🙂</text><text x="1.25em" y="2em" font-size="34" transform="rotate(28 63.75 54.4)">🙃</text><text x="2.5em" y="1em" font-size="34" transform="rotate(28 106.25 20.4)">🤓</text><text x="3.75em" y="2em" font-size="34" transform="rotate(28 148.75 54.4)">😁</text></svg>');
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+
+@font-face {
+  font-family: 'Gameplay';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Gameplay'), url('Gameplay.woff');
+}
+
+#switchLabel{
+  margin-top: 1px;
+}
+
+.btn{
+  font-weight: bold;
+}
+
+.display-6{
+  font-family: 'Gameplay' !important;
+}
+
+.mybtn.disabled{
+  background-color: #dfdf9f;
+  color:white
+}
+
+#remainingGuesses{
+  background-color:#b7effc;
+  color:#024c5d;
+}
+
+.hidden{
+  display: none;
+}
+
+.container{
+  /* background-color: #74bac9; */
+  background-color: #ffffa7;
+  padding: 2px;
+  border-radius:10px;
+  border:rgb(255, 225, 0) solid 2px;
+}
+
+.mainHeading{
+  font-family: 'Gameplay';
+  color: #024c5d;
+  text-shadow: 2px 2px 5px #74bac9;
+  font-weight: bold;
+}
+
+
+.card_container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  perspective: 600px;
+  border: 1px solid white;
+}
+
+.card_content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card_content.is-flipped {
+  transform: translateX(-100%) rotateY(180deg);
+}
+
+.card_face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(254, 212, 0);
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.card_back {
+  transform: rotateY(180deg);
+  background: #024c5d;
+  color: white;
+}
+
+.image_back {
+  width: 100%;
+  height: 100%;
+}
+
+.userHeading{
+  color:#024c5d;
+  text-align: right !important;
+}
+
+.headingCategory{
+  color:#024c5d;
+  font-weight: bold;
+}
+
+.keyLetter{
+  background-color: #024c5d;
+  color:white;
+}
+
+.keyLetter :hover{
+  color:white !important;
+}
+
+.keyLetter.disabled{
+  background-color: #bdd9df !important;
+}
+

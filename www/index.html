@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'"> -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://kit.fontawesome.com/6ba1bbee8d.js" crossorigin="anonymous"></script>
+  <title>Hangman Game</title>
+</head>
+
+<body>
+  <div class="app text-center px-3">
+
+    <div class='currentUserPanel hidden'>
+      <p class="userHeading ">Current User: <span id='currentUser'></span></p>
+    </div>
+
+    <h1 class="display-1 text-center mainHeading p-2 my-2">Hangman</h1>
+
+
+    <!-- sign up container -->
+    <div class="container signUpPanel p-5 text-black mt-4">
+      <h3 class="display-6 mb-4">Sign Up</h3>
+
+      <h5 class="my-4">You still don't have an account in this device. <br><br> Create an account to play Hangman:</h5>
+      <form>
+        <div class="mb-3">
+          <label for="userNameInput" class="form-label">User Name</label>
+          <input type="text" class="form-control" id="userNameInput">
+        </div>
+        <div class="mb-3">
+          <label for="passwordInput" class="form-label">Password</label>
+          <input type="text" class="form-control" id="passwordInput">
+        </div>
+        <div class="btn btn-warning my-2" id="createAccountBtn">Create Account</div>
+      </form>
+    </div>
+
+
+
+    <!-- choose category container -->
+    <div class="container categoryPanel hidden text-center p-4">
+      <h3 class="display-6 mb-4">Let the Fun Begin!</h3>
+      <p class="my-2"> Choose a category from the list:</p>
+      <select class="form-select form-select-lg my-3 bg-warning " id='categoryDropdown'>
+        <option class="text-white" value='' disabled selected>Categories... </option>
+      </select>
+      <img class="img-fluid rounded-2 my-2 " src="img/gallows2.png" alt="hangman-start-image">
+      <div class="row">
+        <div class="btn btn-warning mx-auto my-2 disabled mybtn" id="startGameBtn">Start Game <i class="fa-solid fa-gamepad"></i></div>
+        <div class="btn btn-warning mx-auto my-2 disabled mybtn" id="rankingsBtn">Display Rankings <i class="fa-solid fa-ranking-star"></i></div>
+      </div>
+    </div>
+
+
+    <!-- Rankings Container -->
+    <div class="container dynamic rankingsPanel hidden">
+      <h3 class="display-6 my-4">Rankings</h3>
+      <h4 class="m-3">Category: <span class="headingCategory"></span></h4>
+      <p class="hidden fw-normal" id="noRankings"> You don't have a score for this category. Displaying other players.</p>
+      <div id="rankingsBefore"></div>
+    </div>
+
+    <!-- game play container -->
+    <div class="container dynamic text-center gamePlayPanel p-0 border hidden">
+      <div class="row ms-2">
+        <div class="col-2 mt-2">
+          <div class="form-check form-switch" id="switchContainer"></div>
+        </div>
+        <div class="col-10">       
+          <h4 class="mt-2">Category: <span class="headingCategory"></span></h4>
+        </div>
+      </div>
+
+      <div class="px-2" id="gameGraphics"><img src="./img/hangmanGraphics/guesses6.png" class="img-fluid rounded-2" id="hangmanImage"></div>
+      <div class="d-flex justify-content-center m-4" id="hiddenWord"></div>
+      <div class="card m-2 pt-2 bg-opacity-75" id="remainingGuesses">
+        <h4>You have <span class="text-danger" id="numberOfGuesses"></span> more guesses!</h4>
+      </div>
+      <div class="text-center" id="alphabetLetters"></div>
+    </div>
+
+
+    <!-- game over container -->
+    <div class="container dynamic gameOverPanel hidden">
+      <h3 class="display-6 my-4">Game Over</h3>
+      <h4 class="my-2 fw-bold"> You <span id="winLoss"></span></h4>
+      <p class="fw-bold mt-4" id="rankingUpdate"></p>
+      <div id="rankingsAfter"></div>
+    </div>
+
+    <div class="btn btn-lg btn-warning mx-auto my-1 hidden mybtn" id="homeBtn">Home</div>
+
+  </div>
+  <script src="cordova.js"></script>
+  <script src="js/apiCalls.js"></script>
+  <script src="js/GameController.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
